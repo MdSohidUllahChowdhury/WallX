@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:http/http.dart' as http;
 import 'package:wallx/controller/api/fetch.dart';
+import 'package:wallx/view/set_wallpaper.dart';
 
 class Wallx extends StatefulWidget {
   const Wallx({super.key});
@@ -85,9 +86,16 @@ class _WallxState extends State<Wallx> {
             return Animate(
               child: Container(
                   color: Colors.white,
-                  child: Image.network(
-                    apiImages[index]['src']['large'],
-                    fit: BoxFit.cover,
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(context, 
+                      MaterialPageRoute(builder: 
+                      (context) => SetWallpaper(imagePath:apiImages[index]['src']['large2x'] ),));
+                    },
+                    child: Image.network(
+                      apiImages[index]['src']['large'],
+                      fit: BoxFit.cover,
+                    ),
                   )),
             ).animate().fadeIn(duration: const Duration(seconds: 5)).shimmer(
                 color: Colors.white, duration: const Duration(seconds: 3));
