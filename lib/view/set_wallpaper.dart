@@ -4,8 +4,10 @@ import 'package:flutter_wallpaper_manager/flutter_wallpaper_manager.dart';
 
 // ignore: must_be_immutable
 class SetWallpaper extends StatefulWidget {
+  
   String? imagePath;
-  SetWallpaper({super.key, required this.imagePath});
+  SetWallpaper({super.key, 
+  required this.imagePath});
 
   @override
   State<SetWallpaper> createState() => _SetWallpaperState();
@@ -55,7 +57,7 @@ class _SetWallpaperState extends State<SetWallpaper> {
                 backgroundColor: Colors.amber,
                 radius: 25,
                 child: Icon(
-                  Icons.done_outline_rounded,
+                  Icons.done,
                   color: Colors.black,
                 ),
               ),
